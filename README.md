@@ -48,3 +48,26 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+1️⃣ Redux Store (store.js)
+Creates a global store using createStore.
+Persists data using redux-persist and AsyncStorage, 
+so messages don’t disappear on app restart.
+persistReducer wraps the root reducer to enable persistence.
+Exports store and persistor to manage state.
+
+2️⃣ Reducer (reducers.js)
+Manages the messages array in Redux state.
+Listens for the "ADD_MESSAGE" action to append new messages.
+Returns unchanged state if no recognized action is dispatched.
+
+3️⃣ Action Creator (actions.js)
+Defines addMessage(message), which:
+Returns an action with type "ADD_MESSAGE".
+Sends the message as payload to the reducer.
+
+🤔 How It Works
+Messages are stored in Redux and persisted using AsyncStorage.
+The reducer updates the state when ADD_MESSAGE is dispatched.
+The app can access and display messages even after reload.
