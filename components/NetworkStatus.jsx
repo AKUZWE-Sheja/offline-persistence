@@ -20,9 +20,8 @@ export const useNetworkStatus = () => {
       console.log("Is connected?", state.isConnected);
     });
 
-    // Cleanup listener when component unmounts
+    // Cleanup listener when components unmounts
     return () => unsubscribe();
   }, []);
-
   return isConnected;
 };
